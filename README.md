@@ -90,15 +90,14 @@ bash examples/world_agent_trainer/train_xxx.sh
 
 1. We use Sandbox Fusion as an asynchronous code interpreter. You can follow the [Guidance](sandbox/README.md) to run the CI.
 
-2. The training datasets are Math3-5 from SimpleRL and Deepscaler in `datasets`.
+2. The training datasets are Math3-5 from SimpleRL in `datasets`.
 
 ```bash
 # 3. Install the requirements
 bash prepare_all_science.sh
 
 # 4. Run the demo code with:
-conda activate agentrl_science
-bash examples/simpletir_trainer/train_grpo.sh
+bash examples/simpletir_trainer/train_xxx.sh
 ```
 
 > ### 🎮 **OpenAI Game Agents**

@@ -60,7 +60,7 @@ RESUME=True
 PROJECT_NAME=math_trainer
 
 LOG_PATH=outputs
-RUN_NAME=math_p8192_r4096_n5_t5_4B_grpo_bs512_mbs128_lr1e-6
+RUN_NAME=math_p8192_r4096_n5_t5_4B_grpo_seq_mean_bs512_mbs128_lr1e-6
 LOG_FILE_PATH=$LOG_PATH/$RUN_NAME.log
 
 CHECKPOINT_PATH=checkpoints_$RUN_NAME
@@ -317,6 +317,7 @@ PYTHONUNBUFFERED=1 python -m recipe.math_agent.main_math \
     data.max_prompt_length=$MAX_PROMPT_LENGTH \
     data.max_response_length=$MAX_RESPONSE_LENGTH \
     actor_rollout_ref.model.path=$MODEL_NAME \
+    actor_rollout_ref.actor.loss_agg_mode=seq-mean-token-mean \
     actor_rollout_ref.actor.optim.lr=$ACTOR_LR \
     actor_rollout_ref.actor.ppo_mini_batch_size=$PPO_MINI_BATCH_SIZE \
     actor_rollout_ref.actor.ppo_max_token_len_per_gpu=$PPO_MICRO_TOKEN \

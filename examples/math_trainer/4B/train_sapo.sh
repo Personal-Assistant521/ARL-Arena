@@ -60,7 +60,7 @@ RESUME=True
 PROJECT_NAME=math_trainer
 
 LOG_PATH=outputs
-RUN_NAME=math_p8192_r4096_n5_t5_4B_grpo_bs512_mbs128_lr1e-6
+RUN_NAME=math_p8192_r4096_n5_t5_4B_sapo_bs512_mbs128_lr1e-6
 LOG_FILE_PATH=$LOG_PATH/$RUN_NAME.log
 
 CHECKPOINT_PATH=checkpoints_$RUN_NAME
@@ -309,7 +309,7 @@ WANDB_API_KEY="${WANDB_API_KEY:-}" # Modify your wandb key
 
 PYTHONUNBUFFERED=1 python -m recipe.math_agent.main_math \
     --config-name $CONFIG_NAME \
-    algorithm.adv_estimator=grpo \
+    algorithm.adv_estimator=sapo \
     data.train_files=$TRAIN_FILES \
     data.val_files=$VALID_FILES \
     data.train_batch_size=$TRAIN_BATCH_SIZE \

@@ -1162,23 +1162,42 @@ class RayMathAgentTrainer(RayPPOTrainer):
             data_source_reward[data_source].append(reward_tensor[i].item())
 
         metric_dict = {}
+        n_val = self.config.actor_rollout_ref.rollout.val_kwargs.n
+        
+        # Define k values to compute pass@k for
+        # Compute pass@k for common k values: powers of 2 up to n_val, plus n_val itself
+        k_values = [1, 2, 4, 8, 16, 32, 64]
+        # Filter to only include k <= n_val
+        k_values = [k for k in k_values if k <= n_val]
+        # Also include n_val if not already in the list
+        if n_val not in k_values:
+            k_values.append(n_val)
+        k_values = sorted(k_values)
+        
         for data_source, rewards in data_source_reward.items():
             assert (
-                len(rewards) % self.config.actor_rollout_ref.rollout.val_kwargs.n == 0
+                len(rewards) % n_val == 0
             )
             metric_dict[f"val/test_score/{data_source}"] = np.mean(rewards)
             
             reward_per_test_sample = np.reshape(
-                rewards, (-1, self.config.actor_rollout_ref.rollout.val_kwargs.n)
+                rewards, (-1, n_val)
             )  # [N, n_val]
-            pass_at_k_rate = self.compute_pass_at_k(
-                reward_per_test_sample,
-                k=self.config.actor_rollout_ref.rollout.val_kwargs.n,
-            )
-            print(f"[{data_source}]pass_at_k_rate:", pass_at_k_rate)
-            metric_dict[
-                f"val/test_score/{data_source}_pass@{self.config.actor_rollout_ref.rollout.val_kwargs.n}"
-            ] = pass_at_k_rate
+            
+            # Compute pass@k for all k values
+            for k in k_values:
+                try:
+                    pass_at_k_rate = self.compute_pass_at_k(
+                        reward_per_test_sample,
+                        k=k,
+                    )
+                    metric_key = f"val/test_score/{data_source}_pass@{k}"
+                    metric_dict[metric_key] = pass_at_k_rate
+                    print(f"[{data_source}]pass@{k}: {pass_at_k_rate:.4f}")
+                except ValueError as e:
+                    # Skip if k is larger than available samples (shouldn't happen, but just in case)
+                    print(f"[{data_source}]Warning: Could not compute pass@{k}: {e}")
+                    continue
 
         if reward_extra_info_dict is not None:
             for key, extra_info_dict in reward_extra_info_dict.items():
