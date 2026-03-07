@@ -163,6 +163,9 @@ Figure 4: Training curves on ALFWorld (left) and Sokoban (right).
 }
 ```
 
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=WillDreamer/ARL-Arena&type=Date)](https://www.star-history.com/#WillDreamer/ARL-Arena&Date)
 
 <!-- 
 
